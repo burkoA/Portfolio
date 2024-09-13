@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         inknut: ['Inknut Antiqua', 'serif'],
+        hammerssmith: ['Hammersmith One', 'sans-serif'],
+        halant: ['Halant',' serif']
       },
     },
   },
