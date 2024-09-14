@@ -9,6 +9,10 @@ module.exports = {
         halant: ['Halant',' serif']
       },
     },
+    screens: {
+      'sm': {'min': '320px', 'max': '768px'},
+    }
   },
   plugins: [],
+  darkMode: 'class',
 }

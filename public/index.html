@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&family=Hammersmith+One&display=swap" rel="stylesheet">
     <title>Arsen Burko Portfolio</title>
 </head>
-<body>
-    <header class="font-inknut px-10">
-        <!--Block with info-->
-        <div class="flex justify-between border-b-2 border-black py-8 items-center">
+<body class="dark:bg-black">
+    <header class="font-inknut px-10 dark:bg-black dark:text-white sm:px-5">
+        <!-- Block with info -->
+        <div class="flex justify-between border-b-2 border-black dark:border-white py-8 items-center relative">
             <h1 class="text-2xl">Arsen Burko</h1>
-
-            <!--Contact info-->
-            <div class="flex space-x-10 pr-16 text-sm">
+    
+            <!-- Contact info -->
+            <div class="flex space-x-10 pr-16 text-sm sm:hidden">
                 <div>
                     <p class="mb-2">Write me</p>
                     <a href="mailto:arsenburko67@gmail.com">arsenburko67@gmail.com</a>
@@ -26,175 +26,221 @@
                     <a href="tel:+47793331237" class="font-sans">+47 793 331 237</a>
                 </div>
             </div>
+    
+            <!-- Mobile Menu Button -->
+            <button class="hidden sm:flex flex-col items-center space-y-1 z-40" id="menu-button">
+                <span class="block w-6 h-0.5 bg-black dark:bg-white"></span>
+                <span class="block w-6 h-0.5 bg-black dark:bg-white"></span>
+                <span class="block w-6 h-0.5 bg-black dark:bg-white"></span>
+            </button>
         </div>
-
-        <!--Nav Block-->
-        <div class="flex justify-between pt-10">
-            <!--Page Nav-->
-            <div class="flex space-x-10">
-                <p>About me</p>
-                <p>My projects</p>
-                <p>Contact me</p>
+    
+        <!-- Nav Block -->
+        <div class="flex justify-between items-center pt-5 relative z-10">
+            <!-- Page Nav (Desktop) -->
+            <div class="sm:hidden space-x-10">
+                <a href="index.html#description">About me</a>
+                <a href="index.html#projects">My projects</a>
+                <a href="index.html#contacts">Contact me</a>
             </div>
-            <!--Dark Mode Button-->
-            <button>Dark Mode</button>
+    
+            <!-- Dark Mode Button -->
+            <div class="flex justify-center items-center space-x-4 z-20">
+                <p id="theme-text">Light Mode</p>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="theme-toggle" class="sr-only peer" onclick="toggleDarkMode()">
+                    <div class="w-11 h-7 bg-gray-300 rounded-full peer-checked:bg-black dark:bg-gray-600 dark:peer-checked:bg-white transition-colors duration-300"></div>
+                    <span class="absolute left-1 top-1 bg-white w-5 h-5 rounded-full transition-transform duration-300 peer-checked:translate-x-5 dark:peer-checked:bg-black"></span>
+                </label>
+            </div>
         </div>
-    </header>
+    
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white dark:bg-black text-black dark:text-white transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+            <div class="flex flex-col justify-between h-full p-6">
+                <!-- Close Button -->
+                <button id="close-menu" class="text-3xl text-black dark:text-white self-end z-50">&times;</button>
+    
+                <!-- Contact Info in Mobile Menu -->
+                <div class="space-y-6">
+                    <p class="text-xl font-semibold">Contact Info</p>
+                    <div>
+                        <p class="mb-2">Write me</p>
+                        <a href="mailto:arsenburko67@gmail.com" class="text-blue-500">arsenburko67@gmail.com</a>
+                    </div>
+                    <div>
+                        <p class="mb-2">Call me</p>
+                        <a href="tel:+47793331237" class="text-blue-500">+47 793 331 237</a>
+                    </div>
+                </div>
+    
+                <!-- Nav Links in Mobile Menu -->
+                <div class="space-y-6">
+                    <a href="index.html#description" class="block text-xl font-semibold nav-link">About me</a>
+                    <a href="index.html#projects" class="block text-xl font-semibold nav-link">My projects</a>
+                    <a href="index.html#contacts" class="block text-xl font-semibold nav-link">Contact me</a>
+                </div>
+            </div>
+        </nav>
+    </header>  
 
     <!--Welcome Section-->
-    <section class="px-10 pt-20">
+    <section class="px-10 pt-20 dark:bg-black dark:text-white sm:px-5">
 
-        <div class="flex items-center space-x-10">
+        <div class="flex items-center space-x-10 sm:flex-col sm:space-y-5">
             <!--Self Photo-->
-            <div class="w-1/2">
-                <img src="./img/examplePhoto.png" alt="My Photo" class=" rounded-full h-[900px] object-cover">
+            <div class="w-1/2 sm:w-full">
+                <img src="./img/examplePhoto.png" alt="My Photo" class="rounded-full h-[900px] object-cover sm:h-[300px]">
             </div>
 
             <!--Text Block-->
-            <div class="w-1/2">
-                <h1 class="font-hammerssmith text-5xl mb-5">Hello, I'm Arsen!</h1>
-                <p class="font-halant text-xl">I completed my bachelor's degree at the Polish-Japanese Academy of Information Technology</p>
+            <div class="w-1/2 sm:w-full">
+                <h1 class="font-hammerssmith text-5xl mb-5 sm:text-3xl">Hello, I'm Arsen!</h1>
+                <p class="font-halant text-2xl sm:text-xl">I completed my bachelor's degree at the Polish-Japanese Academy of Information Technology</p>
             </div>
         </div>
 
     </section>
 
-    <!--Describtion Section-->
-    <section class="px-10 pt-20">
-        <div class="flex items-start">
+    <!--Description Section-->
+    <section class="px-10 pt-20 dark:bg-black dark:text-white sm:px-2">
+        <div class="flex items-start sm:flex-col-reverse sm:space-y-5">
 
             <!--Information Block-->
-            <div class="font-hammerssmith w-1/2 pt-10">
-                <h1 class="text-6xl mb-4">A Few Words About Me</h1>
-                <p class="mb-4">I'm programmer that interesting in different fields. 
+            <div class="font-hammerssmith w-1/2 pt-10 sm:w-full" id="description">
+                <h1 class="text-6xl mb-4 sm:text-4xl">A Few Words About Me</h1>
+                <p class="mb-4 text-xl sm:text-base">I'm programmer that interesting in different fields. 
                     I'm trying my self in different fields of programming because all of 
                     this looks interesting and take my breath away</p>
-                <p>At this moment I'm goot at:</p>
-                <ul class="pl-16 list-disc mb-4">
+                <p class="text-xl">At this moment I'm goot at:</p>
+                <ul class="pl-16 list-disc mb-4 text-xl sm:text-base sm:pl-7">
                     <li>C# (ASP.NET, LINQ, .NET), Java</li>
                     <li>MS SQL, Oracle, MySQL, SQL LITE, PostgreSQL</li>
                     <li>HTML, CSS, JavaScript, JQeuery, Bootstrap, Tailwind CSS</li>
                     <li>Active Directory, WireShark, Bash, Linux, Windows</li>
                     <li>Microsoft Office</li>
                 </ul>
-                <p class="mb-10">At this moment I'm upgrading my skills in LeetCode, HackerRunk and CodeWars 
+                <p class="mb-10 text-xl sm:text-base">At this moment I'm upgrading my skills in LeetCode, HackerRunk and CodeWars 
                     and reading different books for improving my skill in programming</p>
-                <button class="bg-black text-white shadow-lg px-6 py-4 rounded-lg">Download CV</button>
+                <a href="./files/sample-3pp.pdf" download="sample-3pp.pdf">
+                    <button class="bg-black text-white shadow-lg px-6 py-4 rounded-lg dark:bg-white dark:text-black">Download CV</button>
+                </a>
             </div>
 
             <!--Photo Block-->
-            <div class="w-1/2 items-end px-5">
-                <img src="./img/examplePhoto.png" alt="Second Photo" class="object-cover rounded-t-3xl rounded-b-3xl h-[700px]">
+            <div class="w-1/2 items-end px-5 sm:w-full sm:hidden">
+                <img src="./img/examplePhoto.png" alt="Second Photo" class="object-cover rounded-t-3xl rounded-b-3xl h-[800px] sm:w-full sm:h-[400px]">
             </div>
 
         </div>
     </section>
 
     <!--Project Section-->
-    <section class="mt-16">
-        <h1 class="font-hammerssmith text-center text-7xl mb-10">My Projects</h1>
+    <section class="pt-16 dark:bg-black dark:text-white" id="projects">
+        <h1 class="font-hammerssmith text-center text-7xl mb-10 sm:text-4xl">My Projects</h1>
 
-        <div class="flex flex-col font-hammerssmith space-y-14">
+        <div class="flex flex-col font-hammerssmith space-y-14 text-xl sm:text-base">
             <!--Project List-->
-            <div class="flex items-center px-20 space-x-10">
-                <p class="w-1/2 text-xl">Creating website on C# ASP.NET that connecting with database MS SQL 
+            <div class="flex items-center px-20 space-x-10 sm:flex-col sm:px-2 sm:space-x-0">
+                <p class="w-1/2 sm:w-10/12">Creating website on C# ASP.NET that connecting with database MS SQL 
                     and work with Google API sush as Google Maps, Distance Matrix and 
                     Google Calnder for helping to find the best time for going to the cinema</p>
-                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl">
+                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl sm:w-full">
             </div>
             
-            <div class="flex items-center px-20 space-x-10">
-                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl">
-                <p class="w-1/2 text-xl">Complete several mini project with database like Oracle, MS SQL, PostgreSQL, 
+            <div class="flex items-center px-20 space-x-10 sm:flex-col-reverse sm:px-2 sm:space-x-0">
+                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl sm:w-full">
+                <p class="w-1/2 sm:w-10/12">Complete several mini project with database like Oracle, MS SQL, PostgreSQL, 
                     MySQL that include triggers, functions, procedurs and cursors</p>
             </div>
 
-            <div class="flex items-center px-20 space-x-10">
-                <p class="w-1/2 text-xl">Complete several mini project on languages like C# and Java, 
+            <div class="flex items-center px-20 space-x-10 sm:flex-col sm:px-2 sm:space-x-0">
+                <p class="w-1/2 sm:w-10/12">Complete several mini project on languages like C# and Java, 
                     this mini project include mini version of paint, donky kong, 
                     small pages that works with database and using Postman</p>
-                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl">
+                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl sm:w-full">
             </div>
 
-            <div class="flex items-center px-20 space-x-10">
-                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl">
-                <p class="w-1/2 text-xl">Creating pages from figma design by using HTML, Tailwind CSS and JavaScript</p>
+            <div class="flex items-center px-20 space-x-10 sm:flex-col-reverse sm:px-2 sm:space-x-0">
+                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl sm:w-full">
+                <p class="w-1/2 sm:w-10/12">Creating pages from figma design by using HTML, Tailwind CSS and JavaScript</p>
             </div>
         </div>
 
     </section>
 
     <!--Contact Section-->
-    <section class="mt-16">
-        <h1 class="font-hammerssmith text-7xl text-center">Contact With Me</h1>
+    <section class="pt-16 dark:bg-black dark:text-white" id="contacts">
+        <h1 class="font-hammerssmith text-7xl text-center sm:text-4xl">Contact With Me</h1>
 
         <!--Contact Information-->
-        <div class="flex justify-between items-center px-20 font-hammerssmith mt-10">
+        <div class="flex justify-between items-center px-20 font-hammerssmith mt-10 sm:flex-col sm:px-10 sm:items-start sm:space-y-10">
             <!--Mail Block-->
             <div>
-                <svg width="150" height="140" viewBox="0 0 150 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M137.5 34.9999C137.5 28.5833 131.875 23.3333 125 23.3333H25C18.125 23.3333 12.5 28.5833 12.5 34.9999M137.5 34.9999V105C137.5 111.417 131.875 116.667 125 116.667H25C18.125 116.667 12.5 111.417 12.5 105V34.9999M137.5 34.9999L75 75.8332L12.5 34.9999" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <p class="mb-2 pl-2 text-2xl">Write me -</p>
-                <a href="mailto:arsenburko67@gmail.com" class="pl-2 text-2xl">arsenburko67@gmail.com</a>
+                <svg width="150" height="140" viewBox="0 0 150 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="sm:w-[50px] sm:h-[50px]">
+                    <path d="M137.5 34.9999C137.5 28.5833 131.875 23.3333 125 23.3333H25C18.125 23.3333 12.5 28.5833 12.5 34.9999M137.5 34.9999V105C137.5 111.417 131.875 116.667 125 116.667H25C18.125 116.667 12.5 111.417 12.5 105V34.9999M137.5 34.9999L75 75.8332L12.5 34.9999" 
+                    class="stroke-gray-800 dark:stroke-white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                
+                <p class="mb-2 pl-2 text-2xl sm:text-base">Write me -</p>
+                <a href="mailto:arsenburko67@gmail.com" class="pl-2 text-2xl sm:text-base">arsenburko67@gmail.com</a>
             </div>
             <!--Tel Block-->
             <div>
-                <svg width="150" height="140" viewBox="0 0 150 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M94.0625 29.1667C100.167 30.2783 105.777 33.0649 110.175 37.1697C114.573 41.2745 117.559 46.5108 118.75 52.2084M94.0625 5.83337C106.745 7.14842 118.572 12.4494 127.602 20.8659C136.631 29.2824 142.325 40.3143 143.75 52.15M137.5 98.7V116.2C137.507 117.825 137.151 119.433 136.453 120.921C135.756 122.41 134.733 123.746 133.45 124.844C132.168 125.943 130.654 126.779 129.005 127.299C127.356 127.82 125.609 128.013 123.875 127.867C104.643 125.916 86.1688 119.783 69.9375 109.958C54.8364 101.002 42.0334 89.0527 32.4375 74.9584C21.8749 59.7404 15.3015 42.4142 13.25 24.3834C13.0938 22.7703 13.2992 21.1445 13.8531 19.6095C14.407 18.0746 15.2973 16.6641 16.4673 15.4678C17.6373 14.2716 19.0613 13.3158 20.6487 12.6614C22.2361 12.007 23.9521 11.6682 25.6875 11.6667H44.4375C47.4707 11.6388 50.4112 12.6413 52.711 14.4873C55.0108 16.3333 56.513 18.8968 56.9375 21.7C57.7289 27.3004 59.1966 32.7993 61.3125 38.0917C62.1534 40.1796 62.3354 42.4487 61.8369 44.6302C61.3384 46.8116 60.1804 48.814 58.5 50.4L50.5625 57.8084C59.4597 72.4124 72.4153 84.5043 88.0625 92.8084L96 85.4C97.6993 83.8317 99.8447 82.7508 102.182 82.2856C104.519 81.8203 106.95 81.9902 109.188 82.775C114.858 84.7499 120.75 86.1197 126.75 86.8584C129.786 87.2581 132.559 88.6854 134.541 90.8688C136.523 93.0521 137.576 95.8392 137.5 98.7Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg width="150" height="140" viewBox="0 0 150 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="sm:w-[50px] sm:h-[50px]">
+                    <path d="M94.0625 29.1667C100.167 30.2783 105.777 33.0649 110.175 37.1697C114.573 41.2745 117.559 46.5108 118.75 52.2084M94.0625 5.83337C106.745 7.14842 118.572 12.4494 127.602 20.8659C136.631 29.2824 142.325 40.3143 143.75 52.15M137.5 98.7V116.2C137.507 117.825 137.151 119.433 136.453 120.921C135.756 122.41 134.733 123.746 133.45 124.844C132.168 125.943 130.654 126.779 129.005 127.299C127.356 127.82 125.609 128.013 123.875 127.867C104.643 125.916 86.1688 119.783 69.9375 109.958C54.8364 101.002 42.0334 89.0527 32.4375 74.9584C21.8749 59.7404 15.3015 42.4142 13.25 24.3834C13.0938 22.7703 13.2992 21.1445 13.8531 19.6095C14.407 18.0746 15.2973 16.6641 16.4673 15.4678C17.6373 14.2716 19.0613 13.3158 20.6487 12.6614C22.2361 12.007 23.9521 11.6682 25.6875 11.6667H44.4375C47.4707 11.6388 50.4112 12.6413 52.711 14.4873C55.0108 16.3333 56.513 18.8968 56.9375 21.7C57.7289 27.3004 59.1966 32.7993 61.3125 38.0917C62.1534 40.1796 62.3354 42.4487 61.8369 44.6302C61.3384 46.8116 60.1804 48.814 58.5 50.4L50.5625 57.8084C59.4597 72.4124 72.4153 84.5043 88.0625 92.8084L96 85.4C97.6993 83.8317 99.8447 82.7508 102.182 82.2856C104.519 81.8203 106.95 81.9902 109.188 82.775C114.858 84.7499 120.75 86.1197 126.75 86.8584C129.786 87.2581 132.559 88.6854 134.541 90.8688C136.523 93.0521 137.576 95.8392 137.5 98.7Z" stroke="#1E1E1E" class="stroke-gray-800 dark:stroke-white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <p class="mb-2 pl-2 text-2xl">Call me -</p>
-                <a href="tel:+47793331237" class="pl-2 text-2xl">+47 793 331 237</a>
+                <p class="mb-2 pl-2 text-2xl sm:text-base">Call me -</p>
+                <a href="tel:+47793331237" class="pl-2 text-2xl sm:text-base">+47 793 331 237</a>
             </div>
             <!--LinkedIn Block-->
             <div>
-                <svg width="150" height="140" viewBox="0 0 150 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M100 46.6667C109.946 46.6667 119.484 50.3542 126.517 56.918C133.549 63.4818 137.5 72.3842 137.5 81.6667V122.5H112.5V81.6667C112.5 78.5726 111.183 75.6051 108.839 73.4172C106.495 71.2292 103.315 70.0001 100 70.0001C96.6848 70.0001 93.5054 71.2292 91.1612 73.4172C88.817 75.6051 87.5 78.5726 87.5 81.6667V122.5H62.5V81.6667C62.5 72.3842 66.4509 63.4818 73.4835 56.918C80.5161 50.3542 90.0544 46.6667 100 46.6667Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M37.5 52.5001H12.5V122.5H37.5V52.5001Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M25 35.0001C31.9036 35.0001 37.5 29.7767 37.5 23.3334C37.5 16.8901 31.9036 11.6667 25 11.6667C18.0964 11.6667 12.5 16.8901 12.5 23.3334C12.5 29.7767 18.0964 35.0001 25 35.0001Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg width="150" height="140" viewBox="0 0 150 140" fill="none" xmlns="http://www.w3.org/2000/svg" class="sm:w-[50px] sm:h-[50px]">
+                    <path d="M100 46.6667C109.946 46.6667 119.484 50.3542 126.517 56.918C133.549 63.4818 137.5 72.3842 137.5 81.6667V122.5H112.5V81.6667C112.5 78.5726 111.183 75.6051 108.839 73.4172C106.495 71.2292 103.315 70.0001 100 70.0001C96.6848 70.0001 93.5054 71.2292 91.1612 73.4172C88.817 75.6051 87.5 78.5726 87.5 81.6667V122.5H62.5V81.6667C62.5 72.3842 66.4509 63.4818 73.4835 56.918C80.5161 50.3542 90.0544 46.6667 100 46.6667Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="stroke-gray-800 dark:stroke-white"/>
+                    <path d="M37.5 52.5001H12.5V122.5H37.5V52.5001Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="stroke-gray-800 dark:stroke-white"/>
+                    <path d="M25 35.0001C31.9036 35.0001 37.5 29.7767 37.5 23.3334C37.5 16.8901 31.9036 11.6667 25 11.6667C18.0964 11.6667 12.5 16.8901 12.5 23.3334C12.5 29.7767 18.0964 35.0001 25 35.0001Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="stroke-gray-800 dark:stroke-white"/>
                 </svg>
-                <p class="mb-2 pl-2 text-2xl">Find Me -</p>
-                <a href="https://www.linkedin.com/in/arsen-burko-172536288/" class="pl-2 text-2xl">Arsen Burko | LinkedIn</a>
+                <p class="mb-2 pl-2 text-2xl sm:text-base">Find Me -</p>
+                <a href="https://www.linkedin.com/in/arsen-burko-172536288/" class="pl-2 text-2xl sm:text-base">Arsen Burko | LinkedIn</a>
             </div>
         </div>
     </section>
 
     <!--Footer Block-->
-    <footer class="font-inknut px-20 mt-20">
+    <footer class="font-inknut px-20 pt-20 dark:bg-black dark:text-white sm:px-5">
 
         <!--Nav Block-->
-        <div class="flex justify-between items-center border-b-[1px] border-black pb-8">
-            <h1 class="text-4xl px-10">Arsen Burko</h1>
-            <div class="flex space-x-10 px-10">
-                <p>About Me</p>
-                <p>My Projects</p>
-                <p>Contact Me</p>
+        <div class="pb-8 flex justify-between items-center border-b-[1px] border-black dark:border-white sm:flex-col sm:space-y-5">
+            <h1 class="text-4xl px-10 sm:text-3xl sm:whitespace-nowrap">Arsen Burko</h1>
+            <div class="flex space-x-10 px-10 sm:flex-col sm:whitespace-nowrap sm:space-x-0 sm:space-y-4">
+                <a href="index.html#description">About me</a>
+                <a href="index.html#projects">My projects</a>
+                <a href="index.html#contacts">Contact me</a>
             </div>
         </div>
 
         <!--Author Block-->
-        <div class="py-5 flex justify-between items-center">
-            <h1 class="px-10">© Created by Arsen Burko</h1>
+        <div class="py-5 flex justify-between items-center sm:flex-col sm:space-y-6">
+            <h1 class="px-10 sm:text-xs sm:whitespace-nowrap">© Created by Arsen Burko</h1>
 
             <!--Links Blocks-->
-            <div class="pr-10 flex space-x-10">
+            <div class="pr-10 flex space-x-10 sm:justify-between sm:pr-0">
                 <a href="https://github.com/burkoA">
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_6_109)">
-                    <path d="M18 38.0001C8 41.0001 8 33.0001 4 32.0001M32 44.0001V36.2601C32.075 35.3064 31.9462 34.3477 31.622 33.4477C31.2979 32.5477 30.7859 31.727 30.12 31.0401C36.4 30.3401 43 27.9601 43 17.0401C42.9995 14.2478 41.9254 11.5625 40 9.54012C40.9117 7.09713 40.8472 4.39682 39.82 2.00012C39.82 2.00012 37.46 1.30012 32 4.96012C27.416 3.71776 22.584 3.71776 18 4.96012C12.54 1.30012 10.18 2.00012 10.18 2.00012C9.15275 4.39682 9.08829 7.09713 10 9.54012C8.06025 11.5775 6.98505 14.287 7 17.1001C7 27.9401 13.6 30.3201 19.88 31.1001C19.222 31.7801 18.7145 32.5909 18.3906 33.48C18.0667 34.369 17.9336 35.3163 18 36.2601V44.0001" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_6_109">
-                    <rect width="48" height="48" fill="white"/>
-                    </clipPath>
-                    </defs>
+                        <g clip-path="url(#clip0_6_109)">
+                        <path d="M18 38.0001C8 41.0001 8 33.0001 4 32.0001M32 44.0001V36.2601C32.075 35.3064 31.9462 34.3477 31.622 33.4477C31.2979 32.5477 30.7859 31.727 30.12 31.0401C36.4 30.3401 43 27.9601 43 17.0401C42.9995 14.2478 41.9254 11.5625 40 9.54012C40.9117 7.09713 40.8472 4.39682 39.82 2.00012C39.82 2.00012 37.46 1.30012 32 4.96012C27.416 3.71776 22.584 3.71776 18 4.96012C12.54 1.30012 10.18 2.00012 10.18 2.00012C9.15275 4.39682 9.08829 7.09713 10 9.54012C8.06025 11.5775 6.98505 14.287 7 17.1001C7 27.9401 13.6 30.3201 19.88 31.1001C19.222 31.7801 18.7145 32.5909 18.3906 33.48C18.0667 34.369 17.9336 35.3163 18 36.2601V44.0001" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="stroke-gray-800 dark:stroke-white"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_6_109">
+                        <rect width="48" height="48" fill="white"/>
+                        </clipPath>
+                        </defs>
                     </svg>
                 </a>
                 <a href="https://www.linkedin.com/in/arsen-burko-172536288/">
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M32 16C35.1826 16 38.2348 17.2643 40.4853 19.5147C42.7357 21.7652 44 24.8174 44 28V42H36V28C36 26.9391 35.5786 25.9217 34.8284 25.1716C34.0783 24.4214 33.0609 24 32 24C30.9391 24 29.9217 24.4214 29.1716 25.1716C28.4214 25.9217 28 26.9391 28 28V42H20V28C20 24.8174 21.2643 21.7652 23.5147 19.5147C25.7652 17.2643 28.8174 16 32 16Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M12 18H4V42H12V18Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4C5.79086 4 4 5.79086 4 8C4 10.2091 5.79086 12 8 12Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M32 16C35.1826 16 38.2348 17.2643 40.4853 19.5147C42.7357 21.7652 44 24.8174 44 28V42H36V28C36 26.9391 35.5786 25.9217 34.8284 25.1716C34.0783 24.4214 33.0609 24 32 24C30.9391 24 29.9217 24.4214 29.1716 25.1716C28.4214 25.9217 28 26.9391 28 28V42H20V28C20 24.8174 21.2643 21.7652 23.5147 19.5147C25.7652 17.2643 28.8174 16 32 16Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="stroke-gray-800 dark:stroke-white"/>
+                        <path d="M12 18H4V42H12V18Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="stroke-gray-800 dark:stroke-white"/>
+                        <path d="M8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4C5.79086 4 4 5.79086 4 8C4 10.2091 5.79086 12 8 12Z" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="stroke-gray-800 dark:stroke-white"/>
                     </svg>                        
                 </a>
             </div>
@@ -202,5 +248,7 @@
         </div>
     </footer>
 
+    <script src="./js/switchMode.js"></script>
+    <script src="./js/hamburgerMenu.js"></script>
 </body>
 </html>
