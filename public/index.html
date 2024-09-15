@@ -11,11 +11,10 @@
 </head>
 <body class="dark:bg-black opacity-0 translate-y-10 transition duration-700 ease-in-out element-to-reveal">
     <header class="font-inknut px-10 dark:bg-black dark:text-white sm:px-5">
-        <!-- Block with info -->
-        <div class="flex justify-between border-b-2 border-black dark:border-white py-8 items-center relative">
+        <div class="flex justify-between border-b-2 border-black dark:border-white py-8 items-center relative px-5">
             <h1 class="text-2xl">Arsen Burko</h1>
     
-            <!-- Contact info -->
+            <!-- Contact info (Desktop) -->
             <div class="flex space-x-10 pr-16 text-sm sm:hidden">
                 <div>
                     <p class="mb-2">Write me</p>
@@ -27,7 +26,7 @@
                 </div>
             </div>
     
-            <!-- Hamburger Menu -->
+            <!-- Hamburger Menu (Mobile) -->
             <button class="hidden sm:flex flex-col items-center space-y-1 z-40" id="menu-button">
                 <span class="block w-6 h-0.5 bg-black dark:bg-white"></span>
                 <span class="block w-6 h-0.5 bg-black dark:bg-white"></span>
@@ -35,17 +34,8 @@
             </button>
         </div>
     
-        <!-- Nav Block -->
-        <div class="flex justify-between items-center pt-5 relative z-10 dark:bg-black">
-            <!-- Page Nav (Desktop) -->
-            <div class="sm:hidden space-x-10">
-                <a href="index.html#description">About me</a>
-                <a href="index.html#projects">My projects</a>
-                <a href="index.html#contacts">Contact me</a>
-            </div>
-    
-            <!-- Dark Mode Button -->
-            <div class="flex justify-center items-center space-x-4 z-20">
+        <div class="flex justify-between items-center px-5">
+            <div class="flex items-start space-x-4 z-20 py-5">
                 <p id="theme-text">Light Mode</p>
                 <label class="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" id="theme-toggle" class="sr-only peer" onclick="toggleDarkMode()">
@@ -53,16 +43,22 @@
                     <span class="absolute left-1 top-1 bg-white w-5 h-5 rounded-full transition-transform duration-300 peer-checked:translate-x-5 dark:peer-checked:bg-black"></span>
                 </label>
             </div>
+    
+            <div class="flex space-x-5 sm:hidden">
+                <a href="index.html#description">About me</a>
+                <a href="index.html#projects">My projects</a>
+                <a href="index.html#contacts">Contact me</a>
+            </div>
         </div>
     
         <!-- Mobile Menu -->
-        <nav id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-white dark:bg-black text-black dark:text-white transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-            <div class="flex flex-col justify-between h-full p-6">
+        <nav id="mobile-menu" class="fixed top-0 right-0 w-full h-screen bg-white dark:bg-black text-black dark:text-white z-50 hidden">
+            <div class="flex flex-col h-full p-6">
                 <!-- Close Button -->
-                <button id="close-menu" class="text-3xl text-black dark:text-white self-end z-50">&times;</button>
+                <button id="close-menu" class="text-3xl text-black dark:text-white self-end">&times;</button>
     
                 <!-- Contact Info in Mobile Menu -->
-                <div class="space-y-6">
+                <div class="space-y-6 mt-8">
                     <p class="text-xl font-semibold">Contact Info</p>
                     <div>
                         <p class="mb-2">Write me</p>
@@ -75,14 +71,14 @@
                 </div>
     
                 <!-- Nav Links in Mobile Menu -->
-                <div class="space-y-6">
+                <div class="space-y-6 mt-8">
                     <a href="index.html#description" class="block text-xl font-semibold nav-link">About me</a>
                     <a href="index.html#projects" class="block text-xl font-semibold nav-link">My projects</a>
                     <a href="index.html#contacts" class="block text-xl font-semibold nav-link">Contact me</a>
                 </div>
             </div>
         </nav>
-    </header>  
+    </header>
 
     <!--Welcome Section-->
     <section class="px-10 pt-20 dark:bg-black dark:text-white sm:px-5">
@@ -90,7 +86,7 @@
         <div class="dark:bg-black flex items-center space-x-10 opacity-0 translate-y-10 transition duration-700 ease-in-out element-to-reveal sm:flex-col sm:space-y-5 md:flex-col md:space-y-5">
             <!--Self Photo-->
             <div class="w-1/2 sm:w-full md:w-full">
-                <img src="./img/examplePhoto.png" alt="My Photo" class="rounded-full h-[900px] object-cover sm:h-[300px] sm:w-full md:h-[700px]">
+                <img src="./img/examplePhoto.png" alt="My Photo" class="rounded-full h-[900px] object-cover sm:object-top sm:h-[300px] sm:w-full md:h-[700px] md:w-full md:object-top xl:w-full xl:object-top">
             </div>
 
             <!--Text Block-->
@@ -122,13 +118,16 @@
                 <p class="mb-10 text-xl sm:text-base">At this moment I'm upgrading my skills in LeetCode, HackerRank and CodeWars 
                     and reading different books for improving my skill in programming</p>
                 <a href="./files/sample-3pp.pdf" download="sample-3pp.pdf">
-                    <button class="bg-black text-white shadow-lg px-6 py-4 rounded-lg dark:bg-white dark:text-black">Download CV</button>
+                    <button class="bg-black text-white shadow-lg px-6 py-4 rounded-lg sm:mb-4 dark:bg-white dark:text-black">Download CV</button>
+                </a>
+                <a href="./files/sample-3pp.pdf" download="sample-3pp.pdf">
+                    <button class="bg-black text-white shadow-lg px-6 py-4 rounded-lg dark:bg-white dark:text-black">Download Certificate</button>
                 </a>
             </div>
 
             <!--Photo Block-->
             <div class="w-1/2 items-end px-5 sm:w-full sm:hidden md:hidden">
-                <img src="./img/examplePhoto.png" alt="Second Photo" class="object-cover rounded-t-3xl rounded-b-3xl h-[800px] sm:w-full sm:h-[400px]">
+                <img src="./img/examplePhoto.png" alt="My Second Photo" class="object-cover rounded-t-3xl rounded-b-3xl h-[800px] sm:w-full sm:h-[400px] xl:w-full">
             </div>
 
         </div>
@@ -146,11 +145,11 @@
                     including Google Maps, Distance Matrix, and Google Calendar, to help users find 
                     the best time to visit the cinema. This solution combines data on location and 
                     travel times to offer a smooth and user-friendly experience.</p>
-                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl sm:w-full">
+                <img src="./img/examplePhoto.png" alt="C# Project" class="h-[300px] w-1/2 object-top object-cover rounded-3xl sm:w-full">
             </div>
             
             <div class="flex items-center space-x-10 sm:flex-col-reverse sm:space-x-0 sm:space-y-4">
-                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl sm:w-full">
+                <img src="./img/examplePhoto.png" alt="SQL Photo" class="h-[300px] w-1/2 object-cover rounded-3xl sm:w-full">
                 <p class="w-1/2 sm:w-10/12">Completed several university projects involving 
                     different databases like Oracle, MS SQL, PostgreSQL, and MySQL. 
                     These projects included working with triggers, functions, procedures, 
@@ -162,11 +161,11 @@
                     including a mini version of Paint, a Donkey Kong game, and small 
                     web applications that interact with databases. These projects also 
                     involved using Postman for testing APIs.</p>
-                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl sm:w-full">
+                <img src="./img/examplePhoto.png" alt="Coding Photo" class="h-[300px] w-1/2 object-cover rounded-3xl sm:w-full">
             </div>
 
             <div class="flex items-center space-x-10 sm:flex-col-reverse sm:space-x-0 sm:space-y-4">
-                <img src="./img/examplePhoto.png" alt="Project Photo" class="h-[300px] w-1/2 object-cover rounded-3xl sm:w-full">
+                <img src="./img/examplePhoto.png" alt="Figma Photo" class="h-[300px] w-1/2 object-cover rounded-3xl sm:w-full">
                 <p class="w-1/2 sm:w-10/12">Developed web pages based on Figma designs using HTML, Tailwind CSS, and JavaScript.</p>
             </div>
         </div>
